@@ -1,15 +1,15 @@
 // Exact copy except import UserService from greeting
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import {UserService} from '../greeting/user.service';
+import { UserService } from '../../../greeting/user.service';
 
-import {Contact, ContactService} from './contact.service';
+import { Contact, ContactService } from '../../contact.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
   contact!: Contact;
@@ -21,8 +21,13 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(
-      private contactService: ContactService, userService: UserService, private formBuilder: FormBuilder) {
-    this.contactForm = this.formBuilder.group({name: ['', Validators.required]});
+    private contactService: ContactService,
+    userService: UserService,
+    private formBuilder: FormBuilder
+  ) {
+    this.contactForm = this.formBuilder.group({
+      name: ['', Validators.required],
+    });
     this.userName = userService.userName;
   }
 
@@ -31,7 +36,7 @@ export class ContactComponent implements OnInit {
   }
 
   setupForm() {
-    this.contactService.getContacts().subscribe(contacts => {
+    this.contactService.getContacts().subscribe((contacts) => {
       this.msg = '';
       this.contacts = contacts;
       this.contact = contacts[0];
@@ -57,13 +62,13 @@ export class ContactComponent implements OnInit {
   newContact() {
     this.displayMessage('New contact');
     this.contactForm.get('name')!.setValue('');
-    this.contact = {id: 42, name: ''};
+    this.contact = { id: 42, name: '' };
     this.contacts.push(this.contact);
   }
 
   /** Display a message briefly, then remove it. */
   displayMessage(msg: string) {
     this.msg = msg;
-    setTimeout(() => this.msg = '', 1500);
+    setTimeout(() => (this.msg = ''), 1500);
   }
 }
