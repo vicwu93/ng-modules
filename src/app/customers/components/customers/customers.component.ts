@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { CustomersService } from '../../customers.service';
-import { UserService } from '../../../greeting/user.service';
+import { CustomersService } from '../../../services/customers.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
-  template: `
-    <h2>Customers of {{ userName }}</h2>
-    <router-outlet></router-outlet>
-  `,
-  providers: [UserService],
+  templateUrl: './customers.component.html',
+  // providers: [UserService],
 })
-export class CustomersComponent {
+export class CustomersComponent implements OnInit {
   userName = '';
-  constructor(userService: UserService) {
-    this.userName = userService.userName;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userName = this.userService.userName;
   }
 }

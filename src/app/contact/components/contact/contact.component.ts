@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { UserService } from '../../../greeting/user.service';
+import { UserService } from '../../../services/user.service';
 
-import { Contact, ContactService } from '../../contact.service';
+import { Contact, ContactService } from '../../../services/contact.service';
 
 @Component({
   selector: 'app-contact',

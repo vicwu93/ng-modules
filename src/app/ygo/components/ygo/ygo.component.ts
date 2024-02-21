@@ -1,4 +1,4 @@
-import { Card, YgoService } from '../ygo.service';
+import { Card, YgoService } from '../../../services/ygo.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -10,14 +10,13 @@ import { Subject } from 'rxjs';
 })
 export class YgoComponent implements OnInit, OnDestroy {
   private readonly _unsubscribe$ = new Subject<void>();
-  private lodtList: Card[] = [];
+  lodtList: Card[] = [];
 
   constructor(private ygoService: YgoService) {}
 
   ngOnInit(): void {
     this.ygoService.getLightOfDestructionSet().subscribe((data) => {
-      debugger;
-      console.log(data);
+      console.log('here');
     });
   }
 

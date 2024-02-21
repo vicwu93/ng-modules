@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Item, ItemService } from '../../items.service';
+import { Item, ItemService } from '../../../services/items.service';
 
 @Component({
   selector: 'app-items-list',

@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,17 +10,16 @@ import { GreetingModule } from './greeting/greeting.module';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
+import { UserService } from './services/user.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     ContactModule,
-    GreetingModule.forRoot({userName: 'Miss Marple'}),
-    AppRoutingModule
+    GreetingModule.forRoot({ userName: 'Miss Marple' }),
+    AppRoutingModule,
   ],
-  declarations: [
-    AppComponent
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

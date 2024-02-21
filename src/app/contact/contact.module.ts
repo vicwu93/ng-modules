@@ -3,7 +3,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContactComponent } from './components/contact/contact.component';
-import { ContactService } from './contact.service';
+import { ContactService } from '../services/contact.service';
 import { ContactRoutingModule } from './contact-routing.module';
 
 @NgModule({

@@ -8,7 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 
 import { GreetingComponent } from './components/greeting/greeting.component';
-import { UserServiceConfig } from './user.service';
+import { UserService, UserServiceConfig } from '../services/user.service';
 
 @NgModule({
   imports: [CommonModule],
