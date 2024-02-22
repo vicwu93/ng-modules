@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { CustomersComponent } from './customers.component';
-import { CustomersDetailComponent } from './customers-detail.component';
-import { CustomersListComponent } from './customers-list.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { CustomersDetailComponent } from './components/customers-detail/customers-detail.component';
+import { CustomersListComponent } from './components/customers-list/customers-list.component';
 import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomersService } from './customers.service';
-
+import { CustomersService } from '../services/customers.service';
 
 @NgModule({
-  imports: [ SharedModule, CustomersRoutingModule ],
+  imports: [SharedModule, CustomersRoutingModule],
   declarations: [
-    CustomersComponent, CustomersDetailComponent, CustomersListComponent,
+    CustomersComponent,
+    CustomersDetailComponent,
+    CustomersListComponent,
   ],
-  providers: [CustomersService]
+  providers: [CustomersService],
 })
-export class CustomersModule { }
+export class CustomersModule {}

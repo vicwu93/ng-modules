@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<app-greeting></app-greeting>
+<nav>
+  <a routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page"
+    >Contact</a
+  >
+  <a routerLink="items" routerLinkActive="active" ariaCurrentWhenActive="page"
+    >Items</a
+  >
+  <a
+    routerLink="customers"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Customers</a
+  >
+  <a [routerLink]="['ygo']" routerLinkActive="active">YGO</a>
+</nav>
+<router-outlet></router-outlet>
