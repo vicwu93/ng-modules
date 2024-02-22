@@ -1,0 +1,9 @@
+<div *ngIf="lodtList | async as lodtList">
+  <div
+    *ngFor="let item of lodtList.data; let index = index; trackBy: trackByFn"
+  >
+    <ul>
+      <li>{{ item.name }}</li>
+    </ul>
+  </div>
+</div>

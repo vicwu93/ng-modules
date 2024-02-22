@@ -14,6 +14,7 @@ export class UserService {
   id = nextId++;
 
   constructor(@Optional() config?: UserServiceConfig) {
+    console.log(this.id, 'times');
     if (config) {
       this._userName = config.userName;
     }

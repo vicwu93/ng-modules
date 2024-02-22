@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CustomersService } from '../../../services/customers.service';
-import { UserService } from '../../../services/user.service';
+import { UserService } from './../../../services/user.service';
 
 @Component({
   templateUrl: './customers.component.html',
-  // providers: [UserService],
+  providers: [UserService],
 })
 export class CustomersComponent implements OnInit {
   userName = '';

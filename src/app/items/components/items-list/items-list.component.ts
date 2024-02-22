@@ -5,12 +5,7 @@ import { Item, ItemService } from '../../../services/items.service';
 
 @Component({
   selector: 'app-items-list',
-  template: `
-    <h3 highlight>Items List</h3>
-    <div *ngFor="let item of items | async">
-      <a routerLink="{{ '../' + item.id }}">{{ item.id }} - {{ item.name }}</a>
-    </div>
-  `,
+  templateUrl: './items-list.component.html',
 })
 export class ItemsListComponent {
   items: Observable<Item[]>;

@@ -10,13 +10,18 @@ import { GreetingModule } from './greeting/greeting.module';
 
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
-import { UserService } from './services/user.service';
+
+/* Other Modules */
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     ContactModule,
-    GreetingModule.forRoot({ userName: 'Miss Marple' }),
+    GreetingModule.forRoot({ userName: 'Miss Minutes' }),
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
   ],
   declarations: [AppComponent],

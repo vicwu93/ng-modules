@@ -60,6 +60,7 @@ export class ContactComponent implements OnInit {
   }
 
   newContact() {
+    debugger;
     this.displayMessage('New contact');
     this.contactForm.get('name')!.setValue('');
     this.contact = { id: 42, name: '' };
