@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <label for="firstName">first name:</label>
+  <input id="firstName" formControlName="fname" />
+  <label for="lastName">last name:</label>
+  <input id="lastName" formControlName="lname" />
+  <button (click)="onSubmit()"></button>
+</form>
+<div *ngIf="fname?.errors?.['required']">fname required</div>
+<div *ngIf="form.get('lname')?.errors?.['allcaps']">lname allcaps</div>
+<app-emit
+  #emit
+  [fromParent]="parentString"
+  (toParent)="onEmit($event)"
+></app-emit>

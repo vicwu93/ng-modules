@@ -18,6 +18,10 @@ export const routes: Routes = [
     path: 'ygo',
     loadChildren: () => import('./ygo/ygo.module').then((m) => m.YgoModule),
   },
+  {
+    path: 'todo',
+    loadChildren: () => import('./todo/todo.module').then((m) => m.TodoModule),
+  },
 ];
 
 @NgModule({
